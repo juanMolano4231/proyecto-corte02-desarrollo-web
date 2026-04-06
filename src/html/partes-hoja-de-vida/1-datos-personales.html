@@ -4,10 +4,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Datos Personales</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
+
+    <div class="container">
+        <h1 class="text-center">1 DATOS PERSONALES</h1>
+
+        <br>
+
+        <form>
+            <fieldset class="form-group">
+                <div class="form-group">
+                    <label for="apellido1">Primer apellido*</label>
+                    <input type="text" class="form-control" id="apellido1" name="apellido1">
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido2">Segundo apellido (o de casada)</label>
+                    <input type="text" class="form-control" id="apellido2" name="apellido2">
+                </div>
+
+                <div class="form-group">
+                    <label for="nombres">Nombre*</label>
+                    <input type="text" class="form-control" id="nombres" name="nombres">
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Documento de identificación</label>
+
+                <div class="radio">
+                    <label><input type="radio" id="cc" name="doc" value="cc" checked> C.C</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="ce" name="doc" value="ce"> C.E</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="pas" name="doc" value="pas"> PAS</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="ced">No.*</label>
+                    <input type="number" class="form-control" id="ced" name="cedula">
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Sexo</label>
+
+                <div class="radio">
+                    <label><input type="radio" id="mas" name="sexo" value="masculino" checked> Masculino</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="fem" name="sexo" value="femenino"> Femenino</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <div class="form-group">
+                    <label for="pais">Nacionalidad*</label>
+                    <select class="form-control" id="pais" name="pais">
+                        <option value="colombia">Colombia</option>
+                        <!-- ESTO VA EN UN ARRAY DE JAVASCRIPT -->
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Libreta militar</label>
+
+                <div class="radio">
+                    <label><input type="radio" id="pri" name="libreta" value="primera" checked> Primera clase</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="seg" name="libreta" value="segunda"> Segunda clase</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="lib">Número*</label>
+                    <input type="number" class="form-control" id="lib" name="libreta">
+                </div>
+                <!-- Distrito Militar (DM) va en arreglo -->
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Fecha y lugar de nacimiento</label>
+                <!-- Todo esto puede que se deba hacer con js -->
+                <!-- Hacer pais y region -->
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Dirección de correspondencia</label>
+
+                <div class="form-group">
+                    <label for="dir">Dirección*</label>
+                    <input type="text" class="form-control" id="dir" name="direccion">
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">Teléfono*</label>
+                    <input type="text" class="form-control" id="tel" name="telefono">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </body>
 
