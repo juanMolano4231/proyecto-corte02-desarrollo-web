@@ -4,16 +4,16 @@ export class ParteController {
     const stored = localStorage.getItem("parts");
     const parts = stored ? JSON.parse(stored) : [];
 
-    const currentUser = localStorage.getItem("currentUser");
+    const user = localStorage.getItem("currentUser");
 
     const fullData = {
         ...data,
-        currentUser,
+        user,
         cvPart
     };
 
     const index = parts.findIndex(p =>
-        p.currentUser === currentUser &&
+        p.user === user &&
         p.cvPart === cvPart
     );
 
