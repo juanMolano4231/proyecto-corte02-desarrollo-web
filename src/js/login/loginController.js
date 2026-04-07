@@ -16,6 +16,7 @@ export class LoginController {
         const rol = (user.usuario === "admin") ? "admin" : "usuario";
 
         localStorage.setItem("rol", rol);
+        localStorage.setItem("currentUser", user.usuario)
 
         return true;
     }
