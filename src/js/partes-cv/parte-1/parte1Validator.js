@@ -58,7 +58,7 @@ export class Parte1Validator {
         if (!/^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s#.,-]+$/.test(direccion)) return true;
         return false;
     }
-
+        
     telefono(telefono) {
         if (!telefono || telefono.trim() === "") return true;
         if (!/^[0-9]{7,15}$/.test(telefono)) return true;
