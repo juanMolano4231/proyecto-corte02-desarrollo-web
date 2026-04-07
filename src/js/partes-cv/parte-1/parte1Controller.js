@@ -26,9 +26,4 @@ export class Parte1Controller {
     getDistritosMilitares() {
         return this.distritosMilitares;
     }
-
-    store(data) {
-        localStorage.setItem("parte-1", JSON.stringify(data));
-        return true;
-    }
 }

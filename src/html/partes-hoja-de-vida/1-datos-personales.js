@@ -109,8 +109,6 @@ function run() {
         document.getElementById("error-email").textContent = "";
     }
 
-    
-
     if (invalid) return;
 
     const data = {
@@ -134,7 +132,9 @@ function run() {
         email
     };
 
-    if (controller.store(data)) {
+    const currentPart = 1;
+
+    if (controller.store(data, currentPart)) {
         window.location.href = "2-formacion-academica.html";
     } else {
         alert("No se pudo guardar la información");
