@@ -6,33 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Personales</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/paper/bootstrap.min.css">
 </head>
 
 <body>
-
     <div class="container">
         <h1 class="text-center">1 DATOS PERSONALES</h1>
-
         <br>
 
-        <form>
+        <form action="#">
             <fieldset class="form-group">
-                <legend>Nombre</legend>
+                <legend>Nombre completo</legend>
 
                 <div class="form-group">
-                    <label for="apellido1">Primer apellido*</label>
-                    <input type="text" class="form-control" id="apellido1" name="apellido1">
+                    <div id="error-primerApellido" class="text-danger"></div>
+                    <label for="primerApellido">Primer apellido</label>
+                    <input type="text" class="form-control" id="primerApellido" name="primerApellido">
                 </div>
 
                 <div class="form-group">
-                    <label for="apellido2">Segundo apellido (o de casada)</label>
-                    <input type="text" class="form-control" id="apellido2" name="apellido2">
+                    <div id="error-segundoApellido" class="text-danger"></div>
+                    <label for="segundoApellido">Segundo apellido</label>
+                    <input type="text" class="form-control" id="segundoApellido" name="segundoApellido">
                 </div>
 
                 <div class="form-group">
-                    <label for="nombres">Nombre*</label>
+                    <div id="error-nombres" class="text-danger"></div>
+                    <label for="nombres">Nombres</label>
                     <input type="text" class="form-control" id="nombres" name="nombres">
                 </div>
             </fieldset>
@@ -40,94 +40,113 @@
             <fieldset class="form-group">
                 <legend>Documento de identificación</legend>
 
-                <div class="radio">
-                    <label><input type="radio" id="cc" name="doc" value="cc" checked> C.C</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" id="ce" name="doc" value="ce"> C.E</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" id="pas" name="doc" value="pas"> PAS</label>
-                </div>
+                <div class="radio"><label><input type="radio" name="tipoDocumento" value="cc" checked> C.C</label></div>
+                <div class="radio"><label><input type="radio" name="tipoDocumento" value="ce"> C.E</label></div>
+                <div class="radio"><label><input type="radio" name="tipoDocumento" value="pas"> PAS</label></div>
 
                 <div class="form-group">
-                    <label for="ced">No.*</label>
-                    <input type="number" class="form-control" id="ced" name="cedula">
+                    <div id="error-numeroDocumento" class="text-danger"></div>
+                    <label for="numeroDocumento">No.</label>
+                    <input type="number" class="form-control" id="numeroDocumento" name="numeroDocumento">
                 </div>
             </fieldset>
 
             <fieldset class="form-group">
                 <legend>Sexo</legend>
-
-                <div class="radio">
-                    <label><input type="radio" id="mas" name="sexo" value="masculino" checked> Masculino</label>
+                <div class="radio"><label><input type="radio" name="sexo" value="masculino" checked> Masculino</label>
                 </div>
-                <div class="radio">
-                    <label><input type="radio" id="fem" name="sexo" value="femenino"> Femenino</label>
-                </div>
+                <div class="radio"><label><input type="radio" name="sexo" value="femenino"> Femenino</label></div>
             </fieldset>
 
             <fieldset class="form-group">
                 <legend>Nacionalidad</legend>
                 <div class="form-group">
-                    <label for="pais">Nacionalidad*</label>
-                    <select class="form-control" id="pais" name="pais">
-                        <option value="colombia">Colombia</option>
-                        <!-- ESTO VA EN UN ARRAY DE JAVASCRIPT -->
-                    </select>
+                    <label for="nacionalidad">Nacionalidad</label>
+                    <select class="form-control" id="nacionalidad" name="nacionalidad"></select>
                 </div>
             </fieldset>
 
             <fieldset class="form-group">
                 <legend>Libreta militar</legend>
 
-                <div class="radio">
-                    <label><input type="radio" id="pri" name="libreta" value="primera" checked> Primera clase</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" id="seg" name="libreta" value="segunda"> Segunda clase</label>
+                <div class="radio"><label><input type="radio" name="claseLibreta" value="primera" checked> Primera
+                        clase</label></div>
+                <div class="radio"><label><input type="radio" name="claseLibreta" value="segunda"> Segunda clase</label>
                 </div>
 
                 <div class="form-group">
-                    <label for="lib">Número*</label>
-                    <input type="number" class="form-control" id="lib" name="libreta">
+                    <div id="error-numeroLibreta" class="text-danger"></div>
+                    <label for="numeroLibreta">Número</label>
+                    <input type="number" class="form-control" id="numeroLibreta" name="numeroLibreta">
                 </div>
-                <!-- Distrito Militar (DM) va en arreglo -->
+
+                <div class="form-group">
+                    <label for="distritoMilitar">Distrito militar</label>
+                    <select class="form-control" id="distritoMilitar" name="distritoMilitar"></select>
+                </div>
             </fieldset>
 
             <fieldset class="form-group">
                 <legend>Fecha y lugar de nacimiento</legend>
-                <!-- Todo esto puede que se deba hacer con js -->
-                <!-- Hacer pais y region -->
+
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento"
+                        min="1900-01-01">
+                </div>
+
+                <div class="form-group">
+                    <label for="paisNacimiento">País</label>
+                    <select class="form-control" id="paisNacimiento" name="paisNacimiento"></select>
+                </div>
+
+                <div class="form-group">
+                    <div id="error-regionNacimiento" class="text-danger"></div>
+                    <label for="regionNacimiento">Región</label>
+                    <input type="text" class="form-control" id="regionNacimiento" name="regionNacimiento">
+                </div>
             </fieldset>
 
             <fieldset class="form-group">
                 <legend>Dirección de correspondencia</legend>
 
                 <div class="form-group">
-                    <label for="dir">Dirección*</label>
-                    <input type="text" class="form-control" id="dir" name="direccion">
+                    <label for="paisResidencia">País</label>
+                    <select class="form-control" id="paisResidencia" name="paisResidencia"></select>
                 </div>
 
                 <div class="form-group">
-                    <label for="tel">Teléfono*</label>
-                    <input type="text" class="form-control" id="tel" name="telefono">
+                    <div id="error-regionResidencia" class="text-danger"></div>
+                    <label for="regionResidencia">Región</label>
+                    <input type="text" class="form-control" id="regionResidencia" name="regionResidencia">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email*</label>
+                    <div id="error-direccion" class="text-danger"></div>
+                    <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion">
+                </div>
+
+                <div class="form-group">
+                    <div id="error-telefono" class="text-danger"></div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono">
+                </div>
+
+                <div class="form-group">
+                    <div id="error-email" class="text-danger"></div>
+                    <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" name="email">
                 </div>
             </fieldset>
 
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Revisar</button>
         </form>
     </div>
 
-    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <script type="module" src="1-datos-personales.js"></script>
 </body>
 
 </html>
