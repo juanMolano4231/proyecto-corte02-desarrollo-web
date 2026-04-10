@@ -10,142 +10,199 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <header class="container" style="position:relative;">
+
+        <!-- Left image -->
+        <img src="../../images/escudo.png" class="img-responsive"
+            style="max-height:80px; position:absolute; left:15px; top:50%; transform:translateY(-50%);">
+
+        <!-- Truly centered text -->
+        <div class="text-center">
+            <h3>FORMATO ÚNICO</h3>
+            <h2>HOJA DE VIDA</h2>
+            <p>
+                Persona Natural<br>
+                (Leyes 190 de 1995, 489 y 443 de 1998)
+            </p>
+        </div>
+
         <h1 class="text-center">1 DATOS PERSONALES</h1>
+    </header>
+
+    <nav class="container text-center">
+        <ul class="nav nav-pills" style="display:inline-block;">
+            <li><a href="#sec-nombre">Nombre</a></li>
+            <li><a href="#sec-documento">Documento</a></li>
+            <li><a href="#sec-sexo">Sexo</a></li>
+            <li><a href="#sec-nacionalidad">Nacionalidad</a></li>
+            <li><a href="#sec-libreta">Libreta</a></li>
+            <li><a href="#sec-nacimiento">Nacimiento</a></li>
+            <li><a href="#sec-direccion">Dirección</a></li>
+        </ul>
         <br>
+    </nav>
 
+    <main class="container">
         <form action="#">
-            <fieldset class="form-group">
-                <legend>Nombre completo</legend>
 
-                <div class="form-group">
-                    <div id="error-primerApellido" class="text-danger"></div>
-                    <label for="primerApellido">Primer apellido</label>
-                    <input type="text" class="form-control" id="primerApellido" name="primerApellido">
-                </div>
+            <section id="sec-nombre">
+                <fieldset class="form-group">
+                    <legend>Nombre completo</legend>
 
-                <div class="form-group">
-                    <div id="error-segundoApellido" class="text-danger"></div>
-                    <label for="segundoApellido">Segundo apellido</label>
-                    <input type="text" class="form-control" id="segundoApellido" name="segundoApellido">
-                </div>
+                    <div class="form-group">
+                        <div id="error-primerApellido" class="text-danger"></div>
+                        <label for="primerApellido">Primer apellido</label>
+                        <input type="text" class="form-control" id="primerApellido" name="primerApellido">
+                    </div>
 
-                <div class="form-group">
-                    <div id="error-nombres" class="text-danger"></div>
-                    <label for="nombres">Nombres</label>
-                    <input type="text" class="form-control" id="nombres" name="nombres">
-                </div>
-            </fieldset>
+                    <div class="form-group">
+                        <div id="error-segundoApellido" class="text-danger"></div>
+                        <label for="segundoApellido">Segundo apellido</label>
+                        <input type="text" class="form-control" id="segundoApellido" name="segundoApellido">
+                    </div>
 
-            <fieldset class="form-group">
-                <legend>Documento de identificación</legend>
+                    <div class="form-group">
+                        <div id="error-nombres" class="text-danger"></div>
+                        <label for="nombres">Nombres</label>
+                        <input type="text" class="form-control" id="nombres" name="nombres">
+                    </div>
+                </fieldset>
+            </section>
 
-                <div class="radio"><label><input type="radio" name="tipoDocumento" value="cc" checked> C.C</label></div>
-                <div class="radio"><label><input type="radio" name="tipoDocumento" value="ce"> C.E</label></div>
-                <div class="radio"><label><input type="radio" name="tipoDocumento" value="pas"> PAS</label></div>
+            <section id="sec-documento">
+                <fieldset class="form-group">
+                    <legend>Documento de identificación</legend>
 
-                <div class="form-group">
-                    <div id="error-numeroDocumento" class="text-danger"></div>
-                    <label for="numeroDocumento">No.</label>
-                    <input type="number" class="form-control" id="numeroDocumento" name="numeroDocumento">
-                </div>
-            </fieldset>
+                    <div class="radio"><label><input type="radio" name="tipoDocumento" value="cc" checked>
+                            C.C</label>
+                    </div>
+                    <div class="radio"><label><input type="radio" name="tipoDocumento" value="ce"> C.E</label></div>
+                    <div class="radio"><label><input type="radio" name="tipoDocumento" value="pas"> PAS</label>
+                    </div>
 
-            <fieldset class="form-group">
-                <legend>Sexo</legend>
-                <div class="radio"><label><input type="radio" name="sexo" value="masculino" checked> Masculino</label>
-                </div>
-                <div class="radio"><label><input type="radio" name="sexo" value="femenino"> Femenino</label></div>
-            </fieldset>
+                    <div class="form-group">
+                        <div id="error-numeroDocumento" class="text-danger"></div>
+                        <label for="numeroDocumento">No.</label>
+                        <input type="number" class="form-control" id="numeroDocumento" name="numeroDocumento">
+                    </div>
+                </fieldset>
+            </section>
 
-            <fieldset class="form-group">
-                <legend>Nacionalidad</legend>
-                <div class="form-group">
-                    <label for="nacionalidad">Nacionalidad</label>
-                    <select class="form-control" id="nacionalidad" name="nacionalidad"></select>
-                </div>
-            </fieldset>
+            <section id="sec-sexo">
+                <fieldset class="form-group">
+                    <legend>Sexo</legend>
+                    <div class="radio"><label><input type="radio" name="sexo" value="masculino" checked>
+                            Masculino</label></div>
+                    <div class="radio"><label><input type="radio" name="sexo" value="femenino"> Femenino</label>
+                    </div>
+                </fieldset>
+            </section>
 
-            <fieldset class="form-group">
-                <legend>Libreta militar</legend>
+            <section id="sec-nacionalidad">
+                <fieldset class="form-group">
+                    <legend>Nacionalidad</legend>
+                    <div class="form-group">
+                        <label for="nacionalidad">Nacionalidad</label>
+                        <select class="form-control" id="nacionalidad" name="nacionalidad"></select>
+                    </div>
+                </fieldset>
+            </section>
 
-                <div class="radio"><label><input type="radio" name="claseLibreta" value="primera" checked> Primera
-                        clase</label></div>
-                <div class="radio"><label><input type="radio" name="claseLibreta" value="segunda"> Segunda clase</label>
-                </div>
+            <section id="sec-libreta">
+                <fieldset class="form-group">
+                    <legend>Libreta militar</legend>
 
-                <div class="form-group">
-                    <div id="error-numeroLibreta" class="text-danger"></div>
-                    <label for="numeroLibreta">Número</label>
-                    <input type="number" class="form-control" id="numeroLibreta" name="numeroLibreta">
-                </div>
+                    <div class="radio"><label><input type="radio" name="claseLibreta" value="primera" checked>
+                            Primera
+                            clase</label></div>
+                    <div class="radio"><label><input type="radio" name="claseLibreta" value="segunda"> Segunda
+                            clase</label></div>
 
-                <div class="form-group">
-                    <label for="distritoMilitar">Distrito militar</label>
-                    <select class="form-control" id="distritoMilitar" name="distritoMilitar"></select>
-                </div>
-            </fieldset>
+                    <div class="form-group">
+                        <div id="error-numeroLibreta" class="text-danger"></div>
+                        <label for="numeroLibreta">Número</label>
+                        <input type="number" class="form-control" id="numeroLibreta" name="numeroLibreta">
+                    </div>
 
-            <fieldset class="form-group">
-                <legend>Fecha y lugar de nacimiento</legend>
+                    <div class="form-group">
+                        <label for="distritoMilitar">Distrito militar</label>
+                        <select class="form-control" id="distritoMilitar" name="distritoMilitar"></select>
+                    </div>
+                </fieldset>
+            </section>
 
-                <div class="form-group">
-                    <div id="error-fechaNacimiento" class="text-danger"></div>
-                    <label for="fechaNacimiento">Fecha de nacimiento</label>
-                    <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento"
-                        min="1900-01-01">
-                </div>
+            <section id="sec-nacimiento">
+                <fieldset class="form-group">
+                    <legend>Fecha y lugar de nacimiento</legend>
 
-                <div class="form-group">
-                    <label for="paisNacimiento">País</label>
-                    <select class="form-control" id="paisNacimiento" name="paisNacimiento"></select>
-                </div>
+                    <div class="form-group">
+                        <div id="error-fechaNacimiento" class="text-danger"></div>
+                        <label for="fechaNacimiento">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento"
+                            min="1900-01-01">
+                    </div>
 
-                <div class="form-group">
-                    <div id="error-regionNacimiento" class="text-danger"></div>
-                    <label for="regionNacimiento">Región</label>
-                    <input type="text" class="form-control" id="regionNacimiento" name="regionNacimiento">
-                </div>
-            </fieldset>
+                    <div class="form-group">
+                        <label for="paisNacimiento">País</label>
+                        <select class="form-control" id="paisNacimiento" name="paisNacimiento"></select>
+                    </div>
 
-            <fieldset class="form-group">
-                <legend>Dirección de correspondencia</legend>
+                    <div class="form-group">
+                        <div id="error-regionNacimiento" class="text-danger"></div>
+                        <label for="regionNacimiento">Región</label>
+                        <input type="text" class="form-control" id="regionNacimiento" name="regionNacimiento">
+                    </div>
+                </fieldset>
+            </section>
 
-                <div class="form-group">
-                    <label for="paisResidencia">País</label>
-                    <select class="form-control" id="paisResidencia" name="paisResidencia"></select>
-                </div>
+            <section id="sec-direccion">
+                <fieldset class="form-group">
+                    <legend>Dirección de correspondencia</legend>
 
-                <div class="form-group">
-                    <div id="error-regionResidencia" class="text-danger"></div>
-                    <label for="regionResidencia">Región</label>
-                    <input type="text" class="form-control" id="regionResidencia" name="regionResidencia">
-                </div>
+                    <div class="form-group">
+                        <label for="paisResidencia">País</label>
+                        <select class="form-control" id="paisResidencia" name="paisResidencia"></select>
+                    </div>
 
-                <div class="form-group">
-                    <div id="error-direccion" class="text-danger"></div>
-                    <label for="direccion">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion">
-                </div>
+                    <div class="form-group">
+                        <div id="error-regionResidencia" class="text-danger"></div>
+                        <label for="regionResidencia">Región</label>
+                        <input type="text" class="form-control" id="regionResidencia" name="regionResidencia">
+                    </div>
 
-                <div class="form-group">
-                    <div id="error-telefono" class="text-danger"></div>
-                    <label for="telefono">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" name="telefono">
-                </div>
+                    <div class="form-group">
+                        <div id="error-direccion" class="text-danger"></div>
+                        <label for="direccion">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion">
+                    </div>
 
-                <div class="form-group">
-                    <div id="error-email" class="text-danger"></div>
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                </div>
-            </fieldset>
+                    <div class="form-group">
+                        <div id="error-telefono" class="text-danger"></div>
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <div id="error-email" class="text-danger"></div>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                </fieldset>
+            </section>
 
             <button type="submit" class="btn btn-primary">Revisar</button>
-
-            <br><br>
+            
         </form>
-    </div>
+    </main>
+
+    <footer class="container text-center">
+        <hr>
+        <p>
+            LÍNEA GRATUITA DE ATENCIÓN AL CLIENTE No. 018000917770<br>
+            PÁGINA WEB: www.dafp.gov.co
+        </p>
+    </footer>
 
     <div id="confirmModal" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
