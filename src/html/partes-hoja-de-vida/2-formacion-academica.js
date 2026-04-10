@@ -4,8 +4,8 @@ import { ParteController } from "../../js/partes-cv/parteController.js";
 
 
 const validator = new Parte2Validator();
-const controller = new Parte2Controller();
 const controllerP = new ParteController();
+const controller = new Parte2Controller(controllerP);
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -64,13 +64,7 @@ function run() {
         tablaIdiomas
     };
 
-    const currentPart = 2;
-
-    if (controllerP.store(data, currentPart)) {
-        window.location.href = "3-experiencia-laboral.html";
-    } else {
-        alert("No se pudo guardar la información");
-    }
+    controller.showConfirmModal(data);
 
 }
 
