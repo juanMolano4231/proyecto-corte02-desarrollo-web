@@ -3,8 +3,8 @@ import { Parte1Controller } from "../../js/partes-cv/parte-1/parte1Controller.js
 import { ParteController } from "../../js/partes-cv/parteController.js"
 
 const validator = new Parte1Validator();
-const controller = new Parte1Controller();
 const controllerP = new ParteController();
+const controller = new Parte1Controller(controllerP);
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -143,11 +143,7 @@ function run() {
 
     const currentPart = 1;
 
-    if (controllerP.store(data, currentPart)) {
-        window.location.href = "2-formacion-academica.html";
-    } else {
-        alert("No se pudo guardar la información");
-    }
+    controller.showConfirmModal(data);
 
 }
 
