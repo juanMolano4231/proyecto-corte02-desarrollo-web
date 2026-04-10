@@ -32,6 +32,7 @@
                 </div>
 
                 <div class="form-group">
+                    <div id="error-fechaGrado" class="text-danger"></div>
                     <label for="fechaGrado">Fecha de grado</label>
                     <input type="date" class="form-control" id="fechaGrado" name="fechaGrado" min="1900-01-01">
                 </div>
@@ -40,14 +41,49 @@
 
             <fieldset class="form-group">
                 <legend>Educación superior (pregrado y posgrado)</legend>
+                <label>Los semestres deben estar entre 1 y 14. La fecha va en formato YYYY-MM</label>
+                <div style="max-height: 300px; overflow-y: auto;">
+                    <div id="error-tablaFormacion" class="text-danger"></div>
+                    <table class="table table-bordered" id="tablaFormacion">
+                        <thead>
+                            <tr>
+                                <th>Modalidad</th>
+                                <th>Semestres</th>
+                                <th>Graduado</th>
+                                <th>Título</th>
+                                <th>Terminación (YYYY-MM)</th>
+                                <th>Tarjeta</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyFormacion"></tbody>
+                    </table>
+                </div>
 
-                <!-- Con js -->
+                <button type="button" class="btn btn-primary" id="addRowTablaFormacion">Agregar</button>
             </fieldset>
 
             <fieldset class="form-group">
                 <legend>Idiomas</legend>
+                <label>Ingrese idiomas diferentes al español</label>
+                <div style="max-height: 300px; overflow-y: auto;">
+                    <div id="error-tablaIdiomas" class="text-danger"></div>
+                    <table class="table table-bordered" id="tablaIdiomas">
+                        <thead>
+                            <tr>
+                                <th>Idioma</th>
+                                <th>Lo Habla</th>
+                                <th>Lo Lee</th>
+                                <th>Lo Escribe</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyIdiomas"></tbody>
+                    </table>
+                </div>
 
-                <!-- Con js -->
+                <button type="button" class="btn btn-primary" id="addRowTablaIdiomas">Agregar</button>
+
             </fieldset>
 
             <button type="submit" class="btn btn-primary">Enviar</button>
