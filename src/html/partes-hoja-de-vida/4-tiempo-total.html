@@ -4,10 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tiempo Total</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/paper/bootstrap.min.css">
 </head>
 
 <body>
+    <div class="container">
+        <h1 class="text-center">4 TIEMPO TOTAL DE EXPERIENCIA LABORAL</h1>
+        <br>
+
+        <form action="#">
+
+            <fieldset class="form-group">
+                <legend>Tiempo total de experiencia laboral</legend>
+
+                <div class="form-group">
+                    <div id="error-tiempoTotal" class="text-danger"></div>
+                    <label for="tiempoTotal">Servidor publico</label>
+                    <br>
+                    <p>Años</p>
+                    <input type="number" class="form-control" id="tiempoAnios" name="tiempoAnios" min="0">
+                    <p>Meses</p>
+                    <input type="number" class="form-control" id="tiempoMeses" name="tiempoMeses" min="0">
+                </div>
+
+                <div class="form-group">
+                    <div id="error-tiempoTotal" class="text-danger"></div>
+                    <label for="tiempoTotal">Empleado del sector privado</label>
+                    <br>
+                    <p>Años</p>
+                    <input type="number" class="form-control" id="tiempoAnios" name="tiempoAnios" min="0">
+                    <p>Meses</p>
+                    <input type="number" class="form-control" id="tiempoMeses" name="tiempoMeses" min="0">
+                </div>
+
+                <div class="form-group">
+                    <div id="error-tiempoTotal" class="text-danger"></div>
+                    <label for="tiempoTotal">Trabajador independiente</label>
+                    <br>
+                    <p>Años</p>
+                    <input type="number" class="form-control" id="tiempoAnios" name="tiempoAnios" min="0">
+                    <p>Meses</p>
+                    <input type="number" class="form-control" id="tiempoMeses" name="tiempoMeses" min="0">
+                </div>
+            </fieldset>
+
+            <p>Tiempo total: <span id="tiempoTotal">0</span> años <span id="tiempoTotalMeses">0</span> meses</p>
+
+            <button type="submit" class="btn btn-primary">Revisar</button>
+        </form>
+    </div>
 
 </body>
 
