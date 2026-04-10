@@ -1,6 +1,8 @@
 export class Parte1Controller {
 
-    constructor() {
+    constructor(controllerP) {
+        this.controllerP = controllerP;
+
         this.paisesLATAM = [
             "Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Costa Rica",
             "Cuba", "Ecuador", "El Salvador", "Guatemala", "Honduras",
@@ -17,6 +19,15 @@ export class Parte1Controller {
             "26 - Ríosucio", "27 - Cartago", "28 - Cali", "29 - Garzón", "30 - Popayán",
             "31 - Pasto", "32 - Ipiales"
         ];
+
+        this.pendingData = null;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("confirmSave");
+            if (btn) {
+                btn.addEventListener("click", () => this.confirmSave());
+            }
+        });
     }
 
     getPaises() {
@@ -26,4 +37,27 @@ export class Parte1Controller {
     getDistritosMilitares() {
         return this.distritosMilitares;
     }
+
+    showConfirmModal(data) {
+        this.pendingData = data;
+
+        const pretty = Object.entries(data)
+            .map(([k, v]) => `${k}: ${v}`)
+            .join("\n");
+
+        document.getElementById("confirmData").textContent = pretty;
+
+        $("#confirmModal").modal("show");
+    }
+
+    confirmSave() {
+        const currentPart = 1;
+
+        if (this.controllerP.store(this.pendingData, currentPart)) {
+            window.location.href = "2-formacion-academica.html";
+        } else {
+            alert("No se pudo guardar la información");
+        }
+    }
+
 }
