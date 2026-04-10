@@ -45,9 +45,7 @@ export class Parte2Validator {
             // YYYY-MM
             if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(row.terminacion)) return true;
 
-            if (row.numTarjetaProfesional) {
-                if (!/^\d+$/.test(row.numTarjetaProfesional)) return true;
-            }
+            if (!row.numTarjetaProfesional || !/^\d+$/.test(row.numTarjetaProfesional)) return true;
         }
 
         return false;
