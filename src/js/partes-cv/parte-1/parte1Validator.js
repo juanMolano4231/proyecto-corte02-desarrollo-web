@@ -26,6 +26,24 @@ export class Parte1Validator {
         return false;
     }
 
+    fechaNacimiento(fecha) {
+        if (!fecha) return true;
+
+        // formato YYYY-MM-DD
+        if (!/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/.test(fecha)) return true;
+
+        const inputDate = new Date(fecha);
+        const today = new Date();
+
+        // fecha inválida real (ej: 2024-02-30)
+        if (isNaN(inputDate.getTime())) return true;
+
+        // no permitir fechas futuras
+        if (inputDate > today) return true;
+
+        return false;
+    }
+
     numeroLibreta(sexo, lib) {
         // If sex is male, require a value
         if (sexo === "masculino") {
