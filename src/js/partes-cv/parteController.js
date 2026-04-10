@@ -7,9 +7,9 @@ export class ParteController {
         const user = localStorage.getItem("currentUser");
 
         const fullData = {
-            ...data,
             user,
-            cvPart
+            cvPart,
+            ...data
         };
 
         const index = parts.findIndex(p =>
