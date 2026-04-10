@@ -69,6 +69,13 @@ function run() {
         document.getElementById("error-numeroDocumento").textContent = "";
     }
 
+    if (validator.fechaNacimiento(fechaNacimiento)) {
+        document.getElementById("error-fechaNacimiento").textContent = "Fecha de nacimiento inválida";
+        invalid = true;
+    } else {
+        document.getElementById("error-fechaNacimiento").textContent = "";
+    }
+
     if (validator.numeroLibreta(sexo, numeroLibreta)) {
         document.getElementById("error-numeroLibreta").textContent = "Número de libreta inválida";
         invalid = true;
