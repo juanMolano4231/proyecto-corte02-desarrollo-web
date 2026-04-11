@@ -7,34 +7,73 @@
     <title>Usuario</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/usuario.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="text-center"></h1>
-        <br>
 
-        <form action="#">
+    <header class="container" style="position:relative;">
+
+        <img src="../images/escudo.png" class="img-responsive"
+            style="max-height:80px; position:absolute; left:15px; top:50%; transform:translateY(-50%);">
+
+        <div class="text-center">
+            <h3>FORMATO ÚNICO</h3>
+            <h2>HOJA DE VIDA</h2>
+            <p>
+                Persona Natural<br>
+                (Leyes 190 de 1995, 489 y 443 de 1998)
+            </p>
+        </div>
+
+        <h1 class="text-center">1 DATOS PERSONALES</h1>
+    </header>
+
+    <main class="container main-content">
+
+        <section>
             <fieldset class="form-group">
-                <legend id="welcome">Bienvenido, </legend>
+
+                <legend id="welcome" class="welcome"></legend>
 
                 <div class="form-group">
-                    <h4>Estado actual de la Hoja de Vida</h4>
-                    <input type="text" id="estado" class="form-control" readonly value="Fallo del estado al cargar">
+                    <label>Estado actual de la Hoja de Vida</label>
+
+                    <input type="text" id="estado" class="form-control estado-input text-center" readonly
+                        value="Fallo del estado al cargar">
+
+                    <small id="estadoHelp" class="estado-help">
+                        Indica el progreso del formulario
+                    </small>
                 </div>
 
-                <div class="form-group">
-                    <button type="button" class="btn btn-primary" id="goToCV">Diligenciar Hoja de Vida</button>
-                    <button type="button" class="btn btn-primary" id="logout">Cerrar sesión</button>
+                <div class="form-group actions">
+                    <button type="button" class="btn btn-primary" id="goToCV">
+                        Diligenciar Hoja de Vida
+                    </button>
+
+                    <button type="button" class="btn btn-primary" id="logout">
+                        Cerrar sesión
+                    </button>
                 </div>
 
-                <br><br>
-        </form>
-    </div>
+            </fieldset>
+        </section>
+
+    </main>
+
+    <footer class="container text-center">
+        <hr>
+        <p>
+            LÍNEA GRATUITA DE ATENCIÓN AL CLIENTE No. 018000917770<br>
+            PÁGINA WEB: www.dafp.gov.co
+        </p>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="module" src="usuario.js"></script>
+
 </body>
 
 </html>
