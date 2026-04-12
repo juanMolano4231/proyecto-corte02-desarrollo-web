@@ -27,7 +27,7 @@ export class Parte2Validator {
     }
 
     tablaFormacion(tabla) {
-        if (!Array.isArray(tabla) || tabla.length === 0) return true;
+        if (!Array.isArray(tabla)) return true;
 
         for (const row of tabla) {
 
