@@ -8,7 +8,10 @@ function initMockUsers() {
     if (!existing) {
         const mock = [
             { usuario: "admin", contrasena: "1234" },
-            { usuario: "juan", contrasena: "1234" }
+            { usuario: "juan", contrasena: "1234" },
+            { usuario: "maria", contrasena: "1234" },
+            { usuario: "jose", contrasena: "1234" },
+            { usuario: "carlos", contrasena: "1234" }
         ];
 
         localStorage.setItem("usuarios", JSON.stringify(mock));
