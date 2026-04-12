@@ -10,10 +10,31 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="text-center">5 FIRMA</h1>
-        <br>
+    <header class="container" style="position:relative;">
 
+        <img src="../../images/escudo.png" class="img-responsive"
+            style="max-height:80px; position:absolute; left:15px; top:50%; transform:translateY(-50%);">
+
+        <div class="text-center">
+            <h3>FORMATO ÚNICO</h3>
+            <h2>HOJA DE VIDA</h2>
+            <p>
+                Persona Natural<br>
+                (Leyes 190 de 1995, 489 y 443 de 1998)
+            </p>
+        </div>
+
+        <h1 class="text-center">5 FIRMA</h1>
+    </header>
+
+    <nav class="container text-center">
+        <ul class="nav nav-pills" style="display:inline-block;">
+            <li><a href="#checkboxFirma">Confirmación</a></li>
+        </ul>
+        <br>
+    </nav>
+
+    <main class="container">
         <form action="#">
 
             <fieldset class="form-group">
@@ -38,7 +59,15 @@
                 <button type="submit" class="btn btn-primary">Revisar</button>
             </div>
         </form>
-    </div>
+    </main>
+
+    <footer class="container text-center">
+        <hr>
+        <p>
+            LÍNEA GRATUITA DE ATENCIÓN AL CLIENTE No. 018000917770<br>
+            PÁGINA WEB: www.dafp.gov.co
+        </p>
+    </footer>
 
     <!-- Modal -->
     <div id="confirmModal" class="modal fade" tabindex="-1">
@@ -62,14 +91,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="module" src="5-firma.js"></script>
-</body>
-
-    <footer class="container text-center">
-        <hr>
-        <p>
-            LÍNEA GRATUITA DE ATENCIÓN AL CLIENTE No. 018000917770<br>
-            PÁGINA WEB: www.dafp.gov.co
-        </p>
-    </footer>
-
+    </body>
 </html>
