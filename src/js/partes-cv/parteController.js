@@ -6,10 +6,13 @@ export class ParteController {
 
         const user = localStorage.getItem("currentUser");
 
+        const now = new Date().toISOString();
+
         const fullData = {
             user,
             cvPart,
-            ...data
+            ...data,
+            updatedAt: now
         };
 
         const index = parts.findIndex(p =>
@@ -18,8 +21,11 @@ export class ParteController {
         );
 
         if (index !== -1) {
+            // preserve createdAt if existed
+            fullData.createdAt = parts[index].createdAt || fullData.updatedAt;
             parts[index] = fullData;
         } else {
+            fullData.createdAt = now;
             parts.push(fullData);
         }
 
@@ -31,10 +37,12 @@ export class ParteController {
         const estadoData = {
             user,
             cvPart: 0,
-            estado: "pendiente"
+            estado: "pendiente",
+            fechaAplicacion: now
         };
 
         if (index0 !== -1) {
+            // reset estado to pendiente when user updates any part
             parts[index0] = estadoData;
         } else {
             parts.push(estadoData);

@@ -17,141 +17,139 @@
 
         <form action="#">
 
-            <div class="checkbox"><label><input type="checkbox" name="validacionTrabajando" value="Publica">¿Se encuentra trabajando?</label></div>
+            <div class="checkbox"><label><input type="checkbox" id="trabajandoCheckbox"> ¿Se encuentra trabajando?</label></div>
 
-            <fieldset class="form-group">
+            <fieldset class="form-group" id="currentContractFieldset" style="display:none;">
                 <legend>Empleo actual o contrato vigente</legend>
 
                 <div class="form-group">
-                    <div id="error-primerApellido" class="text-danger"></div>
-                    <label for="primerApellido">Empresa o entidad</label>
-                    <input type="text" class="form-control" id="primerApellido" name="primerApellido">
-                </div>
-
-                <div class="radio"><label><input type="radio" name="tipoEmpresa" value="Publica"> Publica</label></div>
-                <div class="radio"><label><input type="radio" name="tipoEmpresa" value="Privada"> Privada</label></div>
-
-                <div class="form-group">
-                    <div id="error-pais" class="text-danger"></div>
-                    <label for="pais">Pais</label>
-                    <input type="text" class="form-control" id="pais" name="pais">
+                    <div id="error-currentEmpresa" class="text-danger"></div>
+                    <label for="currentEmpresa">Empresa o entidad</label>
+                    <input type="text" class="form-control" id="currentEmpresa" name="currentEmpresa">
                 </div>
 
                 <div class="form-group">
-                    <div id="error-municipio" class="text-danger"></div>
-                    <label for="municipio">Municipio</label>
-                    <input type="text" class="form-control" id="municipio" name="municipio">
+                    <label for="currentTipoEmpresa">Tipo de empresa</label>
+                    <select class="form-control" id="currentTipoEmpresa" name="currentTipoEmpresa">
+                        <option value="Publica">Pública</option>
+                        <option value="Privada">Privada</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
-                    <div id="error-correo" class="text-danger"></div>
-                    <label for="correo">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" name="correo">
+                    <div id="error-currentPais" class="text-danger"></div>
+                    <label for="currentPais">País</label>
+                    <select class="form-control" id="currentPais" name="currentPais"></select>
                 </div>
 
                 <div class="form-group">
-                    <div id="error-telefonos" class="text-danger"></div>
-                    <label for="telefonos">Teléfonos</label>
-                    <input type="text" class="form-control" id="telefonos" name="telefonos">
+                    <div id="error-currentMunicipio" class="text-danger"></div>
+                    <label for="currentMunicipio">Municipio</label>
+                    <select class="form-control" id="currentMunicipio" name="currentMunicipio"></select>
                 </div>
 
                 <div class="form-group">
-                    <label for="fechaIngreso">Fecha de ingreso</label>
-                    <input type="date" class="form-control" id="fechaIngreso" name="fechaIngreso" min="1900-01-01">
+                    <div id="error-currentCorreo" class="text-danger"></div>
+                    <label for="currentCorreo">Correo electrónico</label>
+                    <input type="email" class="form-control" id="currentCorreo" name="currentCorreo">
                 </div>
 
                 <div class="form-group">
-                    <div id="error-cargoActual" class="text-danger"></div>
-                    <label for="cargoActual">Cargo actual</label>
-                    <input type="text" class="form-control" id="cargoActual" name="cargoActual">
+                    <div id="error-currentTelefonos" class="text-danger"></div>
+                    <label for="currentTelefonos">Teléfonos</label>
+                    <input type="text" class="form-control" id="currentTelefonos" name="currentTelefonos">
                 </div>
 
                 <div class="form-group">
-                    <div id="error-dependencia" class="text-danger"></div>
-                    <label for="dependencia">Dependencia</label>
-                    <input type="text" class="form-control" id="dependencia" name="dependencia">
+                    <label for="currentFechaIngreso">Fecha de ingreso</label>
+                    <input type="date" class="form-control" id="currentFechaIngreso" name="currentFechaIngreso" min="1900-01-01">
                 </div>
 
                 <div class="form-group">
-                    <div id="error-direccion" class="text-danger"></div>
-                    <label for="direccion">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion">
+                    <div id="error-currentCargo" class="text-danger"></div>
+                    <label for="currentCargo">Cargo actual</label>
+                    <input type="text" class="form-control" id="currentCargo" name="currentCargo">
+                </div>
+
+                <div class="form-group">
+                    <div id="error-currentDependencia" class="text-danger"></div>
+                    <label for="currentDependencia">Dependencia</label>
+                    <input type="text" class="form-control" id="currentDependencia" name="currentDependencia">
+                </div>
+
+                <div class="form-group">
+                    <div id="error-currentDireccion" class="text-danger"></div>
+                    <label for="currentDireccion">Dirección</label>
+                    <input type="text" class="form-control" id="currentDireccion" name="currentDireccion">
                 </div>
             </fieldset>
 
             <fieldset class="form-group">
                 <legend>Empleo o contrato anterior</legend>
 
-                <div class="form-group">
-                    <div id="error-primerApellido" class="text-danger"></div>
-                    <label for="primerApellido">Empresa o entidad</label>
-                    <input type="text" class="form-control" id="primerApellido" name="primerApellido">
+                <div id="error-tablaContratos" class="text-danger"></div>
+                <div style="max-height: 300px; overflow-y: auto;">
+                    <table class="table table-bordered" id="tablaContratos">
+                        <thead>
+                            <tr>
+                                <th>Empresa</th>
+                                <th>Tipo</th>
+                                <th>País</th>
+                                <th>Municipio</th>
+                                <th>Correo</th>
+                                <th>Teléfonos</th>
+                                <th>Fecha Ingreso</th>
+                                <th>Fecha Retiro</th>
+                                <th>Cargo</th>
+                                <th>Dependencia</th>
+                                <th>Dirección</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyContratos"></tbody>
+                    </table>
                 </div>
 
-                <div class="radio"><label><input type="radio" name="tipoEmpresa" value="Publica"> Publica</label></div>
-                <div class="radio"><label><input type="radio" name="tipoEmpresa" value="Privada"> Privada</label></div>
-
-                <div class="form-group">
-                    <div id="error-pais" class="text-danger"></div>
-                    <label for="pais">Pais</label>
-                    <input type="text" class="form-control" id="pais" name="pais">
-                </div>
-
-                <div class="form-group">
-                    <div id="error-municipio" class="text-danger"></div>
-                    <label for="municipio">Municipio</label>
-                    <input type="text" class="form-control" id="municipio" name="municipio">
-                </div>
-
-                <div class="form-group">
-                    <div id="error-correo" class="text-danger"></div>
-                    <label for="correo">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" name="correo">
-                </div>
-
-                <div class="form-group">
-                    <div id="error-telefonos" class="text-danger"></div>
-                    <label for="telefonos">Teléfonos</label>
-                    <input type="text" class="form-control" id="telefonos" name="telefonos">
-                </div>
-
-                <div class="form-group">
-                    <label for="fechaIngreso">Fecha de ingreso</label>
-                    <input type="date" class="form-control" id="fechaIngreso" name="fechaIngreso" min="1900-01-01">
-                </div>
-
-
-                <div class="form-group">
-                    <label for="fechaRetiro">Fecha de retiro</label>
-                    <input type="date" class="form-control" id="fechaRetiro" name="fechaRetiro" min="1900-01-01">
-                </div>
-
-                <div class="form-group">
-                    <div id="error-cargoActual" class="text-danger"></div>
-                    <label for="cargoActual">Cargo actual</label>
-                    <input type="text" class="form-control" id="cargoActual" name="cargoActual">
-                </div>
-
-                <div class="form-group">
-                    <div id="error-dependencia" class="text-danger"></div>
-                    <label for="dependencia">Dependencia</label>
-                    <input type="text" class="form-control" id="dependencia" name="dependencia">
-                </div>
-
-                <div class="form-group">
-                    <div id="error-direccion" class="text-danger"></div>
-                    <label for="direccion">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion">
-                </div>
+                <button type="button" class="btn btn-primary" id="addRowTablaContratos">Agregar</button>
             </fieldset>
 
-            <button type="new" class="btn btn-primary">Agregar otro contrato interior</button>
+            <div class="text-center" style="margin-top:20px;">
+                <button type="submit" class="btn btn-primary">Revisar</button>
+            </div>
 
-            <button type="submit" class="btn btn-primary">Revisar</button>
-
-             <br><br>
         </form>
     </div>
+
+    <!-- Modal -->
+    <div id="confirmModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirmar datos</h4>
+                </div>
+                <div class="modal-body">
+                    <pre id="confirmData" style="white-space:pre-wrap;"></pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-primary" id="confirmSave">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="module" src="3-experiencia-laboral.js"></script>
 </body>
+
+    <footer class="container text-center">
+        <hr>
+        <p>
+            LÍNEA GRATUITA DE ATENCIÓN AL CLIENTE No. 018000917770<br>
+            PÁGINA WEB: www.dafp.gov.co
+        </p>
+    </footer>
 
 </html>
