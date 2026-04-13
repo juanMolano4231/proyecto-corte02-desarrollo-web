@@ -1,0 +1,35 @@
+.header-main {
+    position: relative;
+}
+
+.escudo {
+    max-height: 80px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.main-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.welcome {
+    margin-bottom: 20px;
+}
+
+.estado-input {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.estado-help {
+    display: block;
+    margin-top: 5px;
+}
+
+.actions {
+    margin-top: 10px;
+    text-align: center;
+}
